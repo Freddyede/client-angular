@@ -1,0 +1,45 @@
+@if (userActivatedRefresh()) {
+  <app-loader />
+} @else {
+  <div class="col-12" style="height: 6vh;">
+    <div class="mt-2 d-flex justify-content-end pe-2">
+      <button
+        (click)="notifyParent()"
+        class="d-flex align-items-center justify-content-around btn btn-primary"
+      >
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            width="24px"
+            viewBox="0 -960 960 960"
+            fill="#e8eaed">
+            <path
+              d="M480-160q-134 0-227-93t-93-227q0-134
+           93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100
+           0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"
+            />
+          </svg>
+        </div>
+        <div>
+          Refresh datas
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="col-11 d-flex justify-content-around pe-5 align-items-center flex-wrap"
+    style="height: 10vh;"
+  >
+    <div class="card d-flex justify-content-center align-items-center fw-bolder"
+      style="width: 15rem; height: 8vh;"
+    >
+      Nombre d'utilisateurs: {{ users()?.userNumber }}
+    </div>
+    <div class="card d-flex justify-content-center align-items-center fw-bolder"
+      style="width: 15rem; height: 8vh;"
+    >
+      Nombre de produits: {{ users()?.productsNumber }}
+    </div>
+  </div>
+}
