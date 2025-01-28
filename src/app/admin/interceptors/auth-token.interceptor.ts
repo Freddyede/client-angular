@@ -1,6 +1,16 @@
-import { HttpInterceptorFn } from '@angular/common/http';
+import {HttpHandlerFn, HttpInterceptorFn, HttpRequest} from '@angular/common/http';
 
-export const authTokenInterceptor: HttpInterceptorFn = (req, next) => {
+/**
+ * If a user is connected, then autocomplete httpClient header
+ * with good authorization type
+ * @param req
+ * @param next
+ * @version 1.0.0
+ * @author Patouillard Franck<patouillardfranck3@gmail.com>
+*/
+export const authTokenInterceptor: HttpInterceptorFn = (
+  req: HttpRequest<unknown>, next: HttpHandlerFn
+) => {
   const token = localStorage.getItem('token');
 
   let requestToSend = req;

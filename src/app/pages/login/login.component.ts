@@ -8,6 +8,11 @@ import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {Credentials} from '../../shared/interfaces/credentials/credentials';
 
+/**
+ * Contains login page informations
+ * @version 1.0.0
+ * @author Patouillard Franck<patouillardfranck3@gmail.com>
+ */
 @Component({
   selector: 'app-login',
   imports: [

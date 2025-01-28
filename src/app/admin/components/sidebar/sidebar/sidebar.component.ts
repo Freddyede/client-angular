@@ -3,6 +3,11 @@ import {LoginService} from '../../../../shared/services/login/login.service';
 import {Router, RouterLink} from '@angular/router';
 import {NgClass} from '@angular/common';
 
+/**
+ * Contains sidebar elements
+ * @version 1.0.0
+ * @author Patouillard Franck<patouillardfranck3@gmail.com>
+ */
 @Component({
   selector: 'app-sidebar',
   imports: [

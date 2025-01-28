@@ -5,6 +5,11 @@ import {Credentials} from '../../interfaces/credentials/credentials';
 import {map, Observable, tap} from 'rxjs';
 import {environment} from '../../../../environments/environment.development';
 
+/**
+ * Return data for login page information
+ * @version 1.0.0
+ * @author Patouillard Franck<patouillardfranck3@gmail.com>
+ */
 @Injectable({
   providedIn: 'root'
 })
