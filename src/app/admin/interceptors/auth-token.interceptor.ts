@@ -3,8 +3,8 @@ import {HttpHandlerFn, HttpInterceptorFn, HttpRequest} from '@angular/common/htt
 /**
  * If a user is connected, then autocomplete httpClient header
  * with good authorization type
- * @param req
- * @param next
+ * @param req HttpRequest<unknown>
+ * @param next HttpHandlerFn
  * @version 1.0.0
  * @author Patouillard Franck<patouillardfranck3@gmail.com>
 */

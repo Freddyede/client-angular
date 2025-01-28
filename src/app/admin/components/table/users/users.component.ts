@@ -2,6 +2,11 @@ import {Component, EventEmitter, input, InputSignal, Output} from '@angular/core
 import {LoaderComponent} from '../../../../shared/components/loader/loader.component';
 import {IDashboardDatas} from '../../../../shared/interfaces/IDashboardDatas/IDashboardDatas';
 
+/**
+ * Contains all information about user inside table array device
+ * @version 1.0.0
+ * @author Patouillard Franck<patouillardfranck3@gmail.com>
+ */
 @Component({
   selector: 'app-users',
   imports: [
