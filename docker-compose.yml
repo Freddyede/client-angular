@@ -1,7 +1,7 @@
 services:
   frontend:
     build:
-      context: ./client  # Assurez-vous que le chemin pointe vers le dossier de votre app Angular
+      context: .  # Assurez-vous que le chemin pointe vers le dossier de votre app Angular
       dockerfile: Dockerfile
     container_name: angular-frontend
     ports:
