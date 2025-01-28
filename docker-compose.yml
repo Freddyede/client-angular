@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build:
+      context: ./client  # Assurez-vous que le chemin pointe vers le dossier de votre app Angular
+      dockerfile: Dockerfile
+    container_name: angular-frontend
+    ports:
+      - "4200:4200"  # Mapper le port 4200 du conteneur vers le port 4200 sur l'hôte
+    networks:
+      - app-network
+    environment:
+      API_URL: http://backend:3000 # URL pour accéder au backend via le réseau Docker interne
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:
