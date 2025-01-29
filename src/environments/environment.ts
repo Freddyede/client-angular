@@ -1,4 +1,9 @@
-export const environment = {
-  login: 'http://nest-backend:3000/auth/login',
-  dashboard: 'http://nest-backend:3000/admin',
+import { IEnvironment } from "../app/shared/interfaces/environments/IProdEnvironment";
+
+export const environment: IEnvironment = {
+  roads: {
+    customer: 'http://nest-backend:3000/admin/customer',
+    dashboard: 'http://nest-backend:3000/admin',
+    login: 'http://nest-backend:3000/auth/login',
+  }
 };
