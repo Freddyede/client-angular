@@ -13,6 +13,8 @@ export class RouterService {
     let value: string = '';
     if(url === '/super/dashboard' || url === '/admin/dashboard') {
       value = 'Dashboard';
+    } else if(url.includes('/super/clients') || url.includes('/admin/clients')) {
+      value = 'Clients';
     }
     return value;
   }

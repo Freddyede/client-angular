@@ -3,7 +3,7 @@ import {UsersComponent} from '../../../components/table/users/users.component';
 import {AdminService} from '../../../../shared/services/admin/admin.service';
 import {IDashboardDatas} from '../../../../shared/interfaces/IDashboardDatas/IDashboardDatas';
 
-  /**
+/**
  * Contains dashboard page informations
  * @version 1.0.0
  * @author Patouillard Franck<patouillardfranck3@gmail.com>
