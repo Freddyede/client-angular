@@ -1,7 +1,8 @@
-import {Component, inject, signal, WritableSignal} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit, signal, WritableSignal} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {User} from '../../../../shared/models/user/user.model';
 import { CustomerService } from '../../../../shared/services/customer/customer.service';
+import {Subscription} from 'rxjs';
 
 /**
  * Contains users pages informations
@@ -16,13 +17,21 @@ import { CustomerService } from '../../../../shared/services/customer/customer.s
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.less'
 })
-export class CustomersComponent {
+export class CustomersComponent implements OnInit, OnDestroy {
   users: WritableSignal<User[] | undefined> = signal<User[] | undefined>([]);
   customerService: CustomerService = inject(CustomerService);
+  private customersSubscription: Subscription | undefined;
 
-  constructor() {
-    this.customerService.all().subscribe();
-    this.users.set(this.customerService.getData());
+  ngOnInit() {
+    setInterval(
+      () => this.customersSubscription = this.customerService.all().subscribe(
+        (data: User[]) => this.users.set(data)
+      ),
+      1
+    );
   }
 
+  ngOnDestroy(): void {
+    this.customersSubscription?.unsubscribe();
+  }
 }
