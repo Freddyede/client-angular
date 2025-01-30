@@ -1,5 +1,5 @@
 import {Component, inject, OnDestroy, OnInit, signal, WritableSignal} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import { RouterLink } from '@angular/router';
 import {User} from '../../../../shared/models/user/user.model';
 import { CustomerService } from '../../../../shared/services/customer/customer.service';
 import {Subscription} from 'rxjs';
@@ -23,9 +23,9 @@ export class CustomersComponent implements OnInit, OnDestroy {
   private customersSubscription: Subscription | undefined;
 
   ngOnInit() {
-    this.customersSubscription = this.customerService.all().subscribe(
-        (data: User[]) => this.users.set(data)
-    );
+    setTimeout(() =>     this.customersSubscription = this.customerService.all().subscribe(
+      (data: User[]) => this.users.set(data)
+    ), 1000);
   }
 
   ngOnDestroy(): void {
@@ -34,13 +34,8 @@ export class CustomersComponent implements OnInit, OnDestroy {
 
   deleteUser(id: number | undefined) {
     if(id) {
-      this.customerService.delete(id).subscribe(
-        (data: any) => {
-          if(data.statusCode === 200 && data.message === 'Company deleted successfully.') {
-            window.location.reload();
-          }
-        }
-      );
+      this.customerService.delete(id).subscribe();
+      window.location.reload();
     }
   }
 
