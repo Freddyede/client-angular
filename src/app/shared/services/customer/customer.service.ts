@@ -39,5 +39,14 @@ export class CustomerService {
         });
       }))
   }
-
+  delete(id: number): Observable<{message: string, statusCode: number}> {
+    return this.http.delete(this.BASE_URL + '/delete/' + id).pipe(
+      tap((result: any) => {
+        this.userCreatedOrUpdatedDatas.set({
+          message: result['message'],
+          statusCode: result['statusCode'],
+        })
+      })
+    );
+  }
 }

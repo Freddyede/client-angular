@@ -24,7 +24,7 @@
             <div class="col-12 d-flex justify-content-around align-items-center">
               <div><i class="fas fa-pencil"></i></div>
               <div><i class="fas fa-book"></i></div>
-              <div><i class="fas fa-trash"></i></div>
+              <div><i (click)="deleteUser(user?.id)" class="fas fa-trash"></i></div>
             </div>
           </td>
         </tr>

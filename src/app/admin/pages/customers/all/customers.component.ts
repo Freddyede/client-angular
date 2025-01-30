@@ -23,15 +23,25 @@ export class CustomersComponent implements OnInit, OnDestroy {
   private customersSubscription: Subscription | undefined;
 
   ngOnInit() {
-    setInterval(
-      () => this.customersSubscription = this.customerService.all().subscribe(
+    this.customersSubscription = this.customerService.all().subscribe(
         (data: User[]) => this.users.set(data)
-      ),
-      1
     );
   }
 
   ngOnDestroy(): void {
     this.customersSubscription?.unsubscribe();
   }
+
+  deleteUser(id: number | undefined) {
+    if(id) {
+      this.customerService.delete(id).subscribe(
+        (data: any) => {
+          if(data.statusCode === 200 && data.message === 'Company deleted successfully.') {
+            window.location.reload();
+          }
+        }
+      );
+    }
+  }
+
 }
