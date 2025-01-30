@@ -32,7 +32,7 @@ export class CreatedComponent {
       });
     }
     this.customerService.create(this.customerForm.value).subscribe();
-    setTimeout(() => this.router.navigate(['/super/clients']).then(), 3000);
+    setTimeout(() => this.router.navigate(['/super/companies']).then(), 3000);
   }
 
 }

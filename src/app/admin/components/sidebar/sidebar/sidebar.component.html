@@ -12,10 +12,10 @@
   <ul class="nav nav-pills flex-column mb-auto">
     <li>
       <a
-        [routerLink]="['/super/clients']"
-        [ngClass]="title() === 'Clients' ? 'nav-link active' : 'nav-link link-body-emphasis'"
+        [routerLink]="['/super/companies']"
+        [ngClass]="title() === 'Entreprises' ? 'nav-link active' : 'nav-link link-body-emphasis'"
       >
-        Clients
+        <i class="fas fa-users me-2"></i> Entreprises
       </a>
     </li>
     <li>
@@ -23,7 +23,7 @@
         href="#"
         [ngClass]="title() === 'Products' ? 'nav-link active' : 'nav-link link-body-emphasis'"
       >
-        Products
+        <i class="fas fa-cart-shopping me-2"></i> Produits
       </a>
     </li>
   </ul>

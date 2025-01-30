@@ -16,7 +16,7 @@ export const adminRoutes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       {
-        path: 'clients',
+        path: 'companies',
         children: [
           { path: '', component: CustomersComponent },
           { path: 'created', component: CreatedComponent },
