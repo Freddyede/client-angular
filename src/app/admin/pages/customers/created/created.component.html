@@ -1,1 +1,81 @@
-<p>created works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-5 mb-5">
+      <h1 class="text-center text-decoration-underline">Création d'une nouvelle entreprise</h1>
+    </div>
+    <div class="col-12">
+      <form [formGroup]="customerForm" class="mt-5" (ngSubmit)="onSubmit($event)">
+        <div class="col-12 d-flex justify-content-around flex-row flex-wrap">
+          <div class="col-4">
+            <div class="form-group form-floating mb-5">
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                class="form-control"
+                formControlName="lastName"
+                placeholder="Nom de famille"
+              />
+              <label for="lastName">Nom de famille</label>
+            </div>
+            <div class="form-group form-floating mb-5">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control"
+                formControlName="email"
+                placeholder="email"
+              />
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group form-floating mb-5">
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                class="form-control"
+                formControlName="firstName"
+                placeholder="firstname"
+              />
+              <label for="firstName">Prénom</label>
+            </div>
+            <div class="form-group form-floating">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-control"
+                formControlName="password"
+                placeholder="password"
+              />
+              <label for="lastName">Mot de passe</label>
+            </div>
+          </div>
+          <div class="col-10 mt-5">
+            <div class="form-group form-floating">
+              <input
+                type="text"
+                name="avatar"
+                id="avatar"
+                class="form-control"
+                formControlName="avatar"
+                placeholder="avatar"
+              />
+              <label for="avatar">Avatar</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center mt-5">
+          <input
+            type="submit"
+            value="Soumettre"
+            class="btn btn-success"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

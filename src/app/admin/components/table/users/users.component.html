@@ -31,10 +31,12 @@
     class="col-11 d-flex justify-content-around pe-5 align-items-center flex-wrap"
     style="height: 10vh;"
   >
-    <div class="card d-flex justify-content-center align-items-center fw-bolder"
-      style="width: 15rem; height: 8vh;"
+    <div
+      class="card d-flex justify-content-center align-items-center fw-bolder"
+      [routerLink]="['/super/clients']"
+      style="width: 15rem; height: 8vh;cursor: pointer;"
     >
-      Nombre d'utilisateurs: {{ users()?.userNumber }}
+      Nombre d'entreprises: {{ users()?.userNumber }}
     </div>
     <div class="card d-flex justify-content-center align-items-center fw-bolder"
       style="width: 15rem; height: 8vh;"

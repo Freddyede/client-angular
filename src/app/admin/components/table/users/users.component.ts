@@ -1,6 +1,7 @@
 import {Component, EventEmitter, input, InputSignal, Output} from '@angular/core';
 import {LoaderComponent} from '../../../../shared/components/loader/loader.component';
 import {IDashboardDatas} from '../../../../shared/interfaces/IDashboardDatas/IDashboardDatas';
+import {RouterLink} from '@angular/router';
 
 /**
  * Contains all information about user inside table array device
@@ -10,7 +11,8 @@ import {IDashboardDatas} from '../../../../shared/interfaces/IDashboardDatas/IDa
 @Component({
   selector: 'app-users',
   imports: [
-    LoaderComponent
+    LoaderComponent,
+    RouterLink
   ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.less'
