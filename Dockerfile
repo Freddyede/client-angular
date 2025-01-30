@@ -1,5 +1,5 @@
 # Étape 1 : Construire l'application Angular
-FROM node:18
+FROM node:latest
 
 WORKDIR /app
 

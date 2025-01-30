@@ -4,7 +4,11 @@ import {map, Observable, tap} from 'rxjs';
 import {IDashboardDatas} from '../../interfaces/IDashboardDatas/IDashboardDatas';
 import {environment} from '../../../../environments/environment.development';
 
-
+/**
+ * Return data for admin pages informations
+ * @version 1.0.0
+ * @author Patouillard Franck<patouillardfranck3@gmail.com>
+ */
 @Injectable({
   providedIn: 'root'
 })
